@@ -2,14 +2,14 @@ package com.boratron.frontdeskapp.boxactivityrecord;
 
 import com.boratron.frontdeskapp.box.Box;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class BoxActivityRecord {
     private final Box box;
-    LocalDate dateOfStorage;
-    LocalDate dateOfRetrieval;
+    LocalDateTime dateOfStorage;
+    LocalDateTime dateOfRetrieval;
 
-    public BoxActivityRecord(Box box, LocalDate dateOfStorage) {
+    public BoxActivityRecord(Box box, LocalDateTime dateOfStorage) {
         this.box = box;
         this.dateOfStorage = dateOfStorage;
     }
@@ -28,15 +28,15 @@ public class BoxActivityRecord {
         return box;
     }
 
-    public LocalDate getDateOfStorage() {
+    public LocalDateTime getDateOfStorage() {
         return dateOfStorage;
     }
 
-    public LocalDate getDateOfRetrieval() {
+    public LocalDateTime getDateOfRetrieval() {
         return dateOfRetrieval;
     }
 
-    public void setDateOfRetrieval(LocalDate dateOfRetrieval) {
+    public void setDateOfRetrieval(LocalDateTime dateOfRetrieval) {
         this.dateOfRetrieval = dateOfRetrieval;
     }
 }

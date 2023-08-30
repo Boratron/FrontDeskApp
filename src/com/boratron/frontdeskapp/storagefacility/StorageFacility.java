@@ -4,7 +4,7 @@ import com.boratron.frontdeskapp.box.Box;
 import com.boratron.frontdeskapp.boxactivityrecord.BoxActivityRecord;
 import com.boratron.frontdeskapp.storagearea.StorageArea;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -54,14 +54,14 @@ public class StorageFacility {
     }
 
     private boolean recordDateOfStorage(Box box) {
-        return this.boxActivityRecords.add(new BoxActivityRecord(box, LocalDate.now()));
+        return this.boxActivityRecords.add(new BoxActivityRecord(box, LocalDateTime.now()));
     }
 
     private boolean recordDateOfRetrieval(Box box) {
-        int index = this.boxActivityRecords.indexOf(new BoxActivityRecord(box, LocalDate.now()));
+        int index = this.boxActivityRecords.indexOf(new BoxActivityRecord(box, LocalDateTime.now()));
 
         if (index > -1) {
-            this.boxActivityRecords.get(index).setDateOfRetrieval(LocalDate.now());
+            this.boxActivityRecords.get(index).setDateOfRetrieval(LocalDateTime.now());
 
             return true;
         }
