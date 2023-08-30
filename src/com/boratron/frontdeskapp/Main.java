@@ -26,21 +26,22 @@ public class Main {
             System.out.println("Press 1 to create a new storage customer");
             System.out.println("Press 2 to store a customer's box");
             System.out.println("Press 3 to retrieve a customer's box");
-            System.out.println("Press 5 to view the storage facility's records");
-            System.out.println("Press 6 to view all customers");
-            System.out.println("Press 7 to view all storage facilities");
+            System.out.println("Press 4 to view all storage facilities");
+            System.out.println("Press 5 to view a storage facility");
+            System.out.println("Press 6 to view a storage facility's records");
+            System.out.println("Press 7 to view all customers");
             System.out.println("Press any key to exit the application");
 
             String optionInput = Reader.readString("\nEnter option");
-
 
             switch (optionInput) {
                 case "1" -> createCustomer();
                 case "2" -> storeCustomerBox();
                 case "3" -> retrieveCustomerBox();
-                case "5" -> viewStorageFacilityRecords();
-                case "6" -> viewCustomers();
-                case "7" -> viewStorageFacilities();
+                case "4" -> viewStorageFacilities();
+                case "5" -> viewStorageFacility();
+                case "6" -> viewStorageFacilityRecords();
+                case "7" -> viewCustomers();
                 default -> running = false;
             }
         }
@@ -170,6 +171,12 @@ public class Main {
 
     public static void viewStorageFacilities() {
         storageFacilityController.viewStorageFacilities();
+    }
+
+    public static void viewStorageFacility() {
+        String storageFacilityName = Reader.readString("Enter storage facility name");
+
+        storageFacilityController.viewStorageFacility(storageFacilityName);
     }
 
     public static void viewStorageFacilityRecords() {

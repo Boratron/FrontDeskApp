@@ -8,24 +8,28 @@ import com.boratron.frontdeskapp.storagearea.StorageArea;
 import java.util.List;
 
 public class StorageFacilityView {
+    public void displayFacility(StorageFacility storageFacility) {
+        System.out.println("\n//-------------------//");
+        System.out.println("Storage Facility: " + storageFacility.getName());
+        System.out.println("\n-----Storage Areas-----");
+        for (StorageArea storageArea: storageFacility.getStorageAreas()) {
+            System.out.println("\nArea Size: " + storageArea.getSize());
+            System.out.println("Number of Boxes: " + storageArea.getBoxes().size());
+            System.out.println("Max Capacity: " + storageArea.getMaxCapacity());
+            if (storageArea.checkAvailability()) {
+                System.out.println("Availability: Available (Not yet full)");
+            } else {
+                System.out.println("Availability: Not Available (Full)");
+            }
+        }
+        System.out.println("//-------------------//\n");
+    }
+
     public void printResults(List<StorageFacility> storageFacilities) {
         System.out.println("\nStorage Facilities");
         System.out.println("--------------------");
         for (StorageFacility storageFacility : storageFacilities) {
-            System.out.println("//-------------------//");
-            System.out.println("Storage Facility: " + storageFacility.getName());
-            System.out.println("\n-----Storage Areas-----");
-            for (StorageArea storageArea: storageFacility.getStorageAreas()) {
-                System.out.println("\nArea Size: " + storageArea.getSize());
-                System.out.println("Number of Boxes: " + storageArea.getBoxes().size());
-                System.out.println("Max Capacity: " + storageArea.getMaxCapacity());
-                if (storageArea.checkAvailability()) {
-                    System.out.println("Availability: Available (Not yet full)");
-                } else {
-                    System.out.println("Availability: Not Available (Full)");
-                }
-            }
-            System.out.println("//-------------------//\n");
+            this.displayFacility(storageFacility);
         }
     }
 

@@ -46,6 +46,16 @@ public class StorageFacilityController {
         this.storageFacilityView.printResults(this.storageFacilities);
     }
 
+    public void viewStorageFacility(String name) {
+        Optional<StorageFacility> storageFacilitySearch = this.findStorageFacilityByName(name.toUpperCase());
+
+        if (storageFacilitySearch.isPresent()) {
+            this.storageFacilityView.displayFacility(storageFacilitySearch.get());
+        } else {
+            System.out.println("\nStorage Facility '" + name + "' does not exist");
+        }
+    }
+
     public void viewStorageFacilityRecords(String name) {
         Optional<StorageFacility> storageFacilitySearch = this.findStorageFacilityByName(name.toUpperCase());
 
