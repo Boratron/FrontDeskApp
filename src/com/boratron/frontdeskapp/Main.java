@@ -42,7 +42,10 @@ public class Main {
                 case "5" -> viewStorageFacility();
                 case "6" -> viewStorageFacilityRecords();
                 case "7" -> viewCustomers();
-                default -> running = false;
+                default -> {
+                    System.out.println("\nGoodbye...");
+                    running = false;
+                }
             }
         }
     }

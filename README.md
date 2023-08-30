@@ -1,1 +1,4 @@
-Bonus 1
+# Front Desk App
+
+- In-memory
+- Java 17
