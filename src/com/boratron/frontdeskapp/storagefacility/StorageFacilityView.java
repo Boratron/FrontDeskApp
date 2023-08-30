@@ -59,8 +59,8 @@ public class StorageFacilityView {
 
             }
 
-            System.out.println("Owner: " + owner.getFirstName() + " " + owner.getLastName());
-            System.out.println("Phone Number: " + owner.getPhoneNumber() + "\n");
+            System.out.println("Customer's Name: " + owner.getFirstName() + " " + owner.getLastName());
+            System.out.println("Customer's Phone Number: " + owner.getPhoneNumber() + "\n");
         }
     }
 }
