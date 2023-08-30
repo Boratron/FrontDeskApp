@@ -85,6 +85,14 @@ public class StorageFacility {
         return storageArea.removeBox(box) && this.recordDateOfRetrieval(box);
     }
 
+    public boolean isAvailable() {
+        for (StorageArea storageArea : this.storageAreas) {
+            if (storageArea.checkAvailability()) return true;
+        }
+
+        return false;
+    }
+
     public String getName() {
         return name;
     }

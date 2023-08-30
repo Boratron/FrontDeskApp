@@ -25,8 +25,8 @@ public class StorageFacilityController {
 
         StorageFacility storageFacilityB = new StorageFacility("B");
 
-        storageFacilityB.getStorageAreas().add(new StorageArea(Size.SMALL, 10));
-        storageFacilityB.getStorageAreas().add(new StorageArea(Size.MEDIUM, 5));
+        storageFacilityB.getStorageAreas().add(new StorageArea(Size.SMALL, 1));
+        storageFacilityB.getStorageAreas().add(new StorageArea(Size.MEDIUM, 1));
         storageFacilityB.getStorageAreas().add(new StorageArea(Size.LARGE, 1));
 
 
